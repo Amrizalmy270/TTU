@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Gambar - WebP vs AVIF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .title {
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Galeri Perbandingan WebP vs AVIF</h2>
+    <div class="container">
+        <div class="card">
+            <img src="images/Original/1.jpg" alt="WebP Image 1">
+            <div class="title">WebP Format - Image 1</div>
+            <img src="images/Original/2.jpg" alt="WebP Image 2">
+            <div class="title">WebP Format - Image 2</div>
+        </div>
+    </div>
+</body>
+</html>
