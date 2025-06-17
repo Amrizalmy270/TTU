@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Nusantara</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #e3f2fd;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .navbar-brand {
+      color: #0288d1;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #0277bd;
+      margin-right: 1rem;
+      font-weight: 500;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #01579b;
+    }
+
+    .hero {
+      height: 65vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('images/JPG/10.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      max-width: 700px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .search-bar {
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .search-bar input {
+      background-color: rgba(255, 255, 255, 0.3);
+      border: 1px solid #ccc;
+      color: #fff;
+    }
+
+    .search-bar input::placeholder {
+      color: #f0f0f0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-title {
+      text-align: center;
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0277bd;
+    }
+
+    .gallery-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+
+    .gallery {
+      display: grid;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      justify-content: center;
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0277bd;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: #003c5e;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 4rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+      padding-top: 1rem;
+      font-size: 0.875rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 992px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+    }
+
+    @media (max-width: 991.98px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card img {
+        height: 140px;
+      }
+    }
+
+    .logo {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .nav-item{
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img class="logo" src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Logo">
+        Explore Nusantara
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinasi">Destinasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h2>Temukan Surga Wisata di Indonesia</h2>
+    <form class="search-bar">
+      <input type="text" class="form-control form-control-lg" placeholder="Cari destinasi...">
+    </form>
+  </header>
+
+  <main>
+    <h2 class="section-title" id="destinasi">Destinasi Populer</h2>
+    <div class="gallery-wrapper">
+      <div class="gallery">
+
+        <div class="card">
+          <img src="images/JPG/1.jpg" alt="Pantai 1">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Kuta</h5>
+            <p class="card-text">Destinasi favorit di Bali dengan sunset indah dan aktivitas selancar yang seru.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/2.jpg" alt="Pantai 2">
+          <div class="card-body">
+            <h5 class="card-title">Pulau Derawan</h5>
+            <p class="card-text">Surga tersembunyi di Kalimantan Timur, terkenal dengan penyu hijau dan ubur-ubur tanpa
+              sengat.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/3.jpg" alt="Pantai 3">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Pink</h5>
+            <p class="card-text">Pantai eksotis di Flores dengan warna pasir kemerahan yang jarang ditemui di dunia.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/4.jpg" alt="Pantai 4">
+          <div class="card-body">
+            <h5 class="card-title">Gili Trawangan</h5>
+            <p class="card-text">Pulau kecil di Lombok dengan panorama bawah laut menakjubkan dan suasana santai.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/5.jpg" alt="Pantai 5">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Sanur</h5>
+            <p class="card-text">Pantai yang tenang di Bali, cocok untuk menikmati sunrise dan berjalan santai di tepi
+              laut.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/6.jpg" alt="Pantai 6">
+          <div class="card-body">
+            <h5 class="card-title">Pulau Weh</h5>
+            <p class="card-text">Pulau di ujung barat Indonesia yang menawarkan keindahan diving dan air laut yang
+              jernih.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/7.jpg" alt="Pantai 7">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Tanjung Tinggi</h5>
+            <p class="card-text">Pantai indah di Belitung dengan batu granit raksasa yang unik di sepanjang garis
+              pantai.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/8.jpg" alt="Pantai 8">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Parangtritis</h5>
+            <p class="card-text">Pantai legendaris di Yogyakarta dengan ombak besar dan pemandangan sunset yang menawan.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/9.jpg" alt="Pantai 9">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Tanjung Lesung</h5>
+            <p class="card-text">Pantai indah di Banten yang menawarkan pasir putih bersih dan panorama Gunung Krakatau.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/10.jpg" alt="Pantai 10">
+          <div class="card-body">
+            <h5 class="card-title">Pulau Komodo</h5>
+            <p class="card-text">Pulau eksotis rumah bagi komodo, dengan pantai dan perairan yang kaya akan keindahan
+              laut.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/11.jpg" alt="Pantai 11">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Ora</h5>
+            <p class="card-text">Pantai tersembunyi di Maluku dengan air sebening kaca, ideal untuk snorkeling dan
+              fotografi.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/12.jpg" alt="Pantai 12">
+          <div class="card-body">
+            <h5 class="card-title">Pulau Bira</h5>
+            <p class="card-text">Destinasi cantik di Sulawesi Selatan dengan pasir putih halus dan laut biru yang
+              tenang.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/13.jpg" alt="Pantai 13">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Senggigi</h5>
+            <p class="card-text">Pantai andalan Lombok dengan garis pantai panjang, cocok untuk relaksasi dan melihat
+              sunset.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/14.jpg" alt="Pantai 14">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Balekambang</h5>
+            <p class="card-text">Pantai di Malang dengan pulau karang kecil yang mirip dengan Tanah Lot di Bali.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/15.jpg" alt="Pantai 15">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Nusa Dua</h5>
+            <p class="card-text">Pantai eksklusif di Bali dengan resort mewah dan ombak yang tenang, cocok untuk
+              keluarga.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="images/JPG/16.jpg" alt="Pantai 16">
+          <div class="card-body">
+            <h5 class="card-title">Pantai Sawarna</h5>
+            <p class="card-text">Pantai cantik di Lebak, Banten dengan batu karang unik dan spot fotografi yang memukau.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+
+
+  <footer id="kontak">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>Explore Nusantara</h5>
+          <p>Menjelajahi keindahan alam dan budaya Indonesia dalam satu platform digital.</p>
+        </div>
+        <div class="col-md-4 footer-links">
+          <h5>Link Navigasi</h5>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#destinasi">Destinasi</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Kontak</h5>
+          <p>Email: info@explorenusantara.com</p>
+          <p>Lokasi: Jakarta, Indonesia</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Explore Nusantara. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
